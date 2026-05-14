@@ -1,4 +1,4 @@
-# 222 Waffle Website 🧇
+# Liège Waffle & Coffe Website 
 
 Modern, hızlı ve responsive bir waffle satış web uygulaması. Kullanıcı deneyimi, performans ve mobil uyumluluk odaklı geliştirilmiştir.
 
