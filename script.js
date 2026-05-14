@@ -12,7 +12,7 @@ const defaultSuggestions = [
     name: "Elif",
     flavor: "Meyveli",
     rating: "5",
-    message: "Taze meyve ve beyaz çikolata uyumu menüde mutlaka olsun."
+    message: "Taze meyve ve beyaz çikolata uyumu Liège menüsünde mutlaka olsun."
   },
   {
     name: "Mert",
@@ -22,7 +22,7 @@ const defaultSuggestions = [
   }
 ];
 
-const suggestionsStorageKey = "twoTwoTwoWaffleSuggestions";
+const suggestionsStorageKey = "liegeWaffleSuggestions";
 const storedSuggestions = JSON.parse(localStorage.getItem(suggestionsStorageKey) || "[]");
 const suggestions = [...storedSuggestions, ...defaultSuggestions];
 
@@ -169,7 +169,7 @@ suggestionForm.addEventListener("submit", (event) => {
     rating: formData.get("rating").toString()
   };
 
-  if (!suggestion.name || !suggestion.flavor || !suggestion.message) {
+  if (!suggestion.name || !suggestion.flavor || !suggestion.message || !suggestion.rating) {
     showToast("Lütfen öneri formunu tamamla.");
     return;
   }
@@ -178,7 +178,7 @@ suggestionForm.addEventListener("submit", (event) => {
   localStorage.setItem(suggestionsStorageKey, JSON.stringify(suggestions.filter((item) => !defaultSuggestions.includes(item)).slice(0, 8)));
   renderSuggestions();
   suggestionForm.reset();
-  suggestionForm.rating.value = "4";
+  suggestionForm.rating.value = "5";
   showToast("Önerin kaydedildi. Teşekkürler!");
 });
 
